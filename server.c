@@ -110,7 +110,7 @@ int main(int argc, char **argv)
     clients[cclients]=connfd;
     conn[cclients]=1;
     cclients++;
-    sprintf(sendBuff,"Current number of clients: %d\n",cclients-1);
+    sprintf(sendBuff,"Current number of clients: %d\nYour id: %d\n",cclients,cclients-1);
     send(connfd,sendBuff,sizeof(sendBuff),0);
     pthread_t tid,ptid;
     pthread_create(&ptid, NULL, &func,(void *)&connfd);
